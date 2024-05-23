@@ -1,0 +1,237 @@
+:root {
+  --black: #1b1b1b;
+  --white: #fff;
+  --primary: var(--black);
+  --gold: rgb(218, 165, 32);
+  --dark-blue: rgba(17, 25, 40, 0.75);
+  --dark-blue-900: rgb(17, 25, 40);
+  --body-background: var(--black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 8rem;
+}
+
+body {
+  background-color: var(--body-background);
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.container {
+  max-width: 1536px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* DESKTOP NAV */
+.main-nav-wrapper {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.75rem;
+}
+
+.main-nav .logo,
+.mobile-nav .logo {
+  width: clamp(2rem, 2vw, 2.5rem);
+  display: flex;
+  align-self: center;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.main-nav .logo img,
+.mobile-nav .logo img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.menu-btns {
+  display: none;
+  list-style-type: none;
+  gap: 4rem;
+  font-size: large;
+  padding: 0;
+}
+
+a,
+.menu-btns a,
+.menu-btns a:link,
+.menu-btns a:visited,
+.mobile-menu-btns a,
+.mobile-menu-btns a:link,
+.mobile-menu-btns a:visited {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.menu-btns a {
+  transition: all ease-in-out 0.1s;
+}
+
+.open-menu-btn,
+.close-menu-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* MOBILE NAV */
+.mobile-nav-wrapper {
+  display: none;
+  transform: translateX(-100vw);
+  opacity: 0;
+  transition: all ease-in-out;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--black);
+}
+
+.mobile-nav-wrapper.active {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+  transition: all ease-in-out;
+  z-index: 999 !important;
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 0.85rem 2rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.mobile-menu-btns {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mobile-menu-btns li,
+.mobile-menu-btns a {
+  width: 100%;
+  text-align: center;
+}
+
+.menu-btns li,
+.mobile-menu-btns li {
+  display: inline;
+}
+
+.menu-btns li a:hover,
+.mobile-menu-btns li a:hover,
+.menu-btns li a:active,
+.mobile-menu-btns li a:active {
+  color: var(--gold);
+}
+
+/* HERO */
+.hero-section {
+  margin-top: clamp(8rem, 30vw, 10rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.hero-section > * {
+  flex: 1;
+}
+
+.hero-section img {
+  width: clamp(24rem, 8vw, 48rem);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-text .name {
+  font-weight: 800;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.cta {
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  /* background-color: var(--gold); */
+  outline: 1px solid gold;
+  transition: background-color ease-in-out 0.1s;
+}
+
+.cta:hover {
+  background-color: var(--gold);
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .main-nav {
+    padding-block: 1rem;
+  }
+
+  .menu-btns {
+    display: flex;
+  }
+
+  .open-menu-btn {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .hero-section {
+    flex-direction: row;
+  }
+
+  .hero-text {
+    /* align-items: flex-start; */
+    /* text-align: start; */
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+}
