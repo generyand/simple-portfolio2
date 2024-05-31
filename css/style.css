@@ -379,6 +379,57 @@ a,
 /* Footer and Contacts start here */
 footer {
   background-color: var(--black);
+  color: var(--white);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  padding-block: 2rem;
+  gap: 1.5rem;
+}
+
+.contacts > * {
+  flex: 1;
+}
+
+.contacts h2 {
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  gap: clamp(0.75rem, 3vw, 1rem); /*   */
+  margin-bottom: 0.5rem;
+}
+
+.social-links i {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  transition: all 0.25s ease-in-out;
+}
+
+.social-links i:hover {
+  color: var(--gold);
+}
+
+.contact-address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c-address-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* justify-content: center; */
+}
+
+.copyright {
+  text-align: center;
+  margin: 0 auto;
+  margin-block-end: 1rem;
+  font-size: .75rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -427,5 +478,13 @@ footer {
 
   .certificates-container {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .contacts {
+    flex-direction: row;
+  }
+
+  .copyright {
+    font-size: 1rem;
   }
 }
