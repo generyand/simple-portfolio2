@@ -342,6 +342,10 @@ a,
   color: var(--black);
 }
 
+.certificates {
+  padding-block-end: 4rem;
+}
+
 .certificates h2 {
   margin-block-end: 2rem;
 }
@@ -358,7 +362,7 @@ a,
   border-radius: 0.5rem;
   overflow: hidden;
   height: fit-content;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .certificate-card:hover {
@@ -374,6 +378,10 @@ a,
 
 @media screen and (min-width: 768px) {
   .projects-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .certificates-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
