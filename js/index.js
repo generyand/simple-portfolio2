@@ -3,7 +3,6 @@ const closeMenuBtn = document.querySelector(".close-menu-btn");
 const mobileNav = document.querySelector(".mobile-nav-wrapper");
 const mobileMenuBtns = document.querySelectorAll(".mobile-menu-btns li a");
 const main = document.querySelector("main");
-console.log(mobileMenuBtns);
 
 openMenuBtn.addEventListener("click", () => {
   mobileNav.classList.add("active");
